@@ -1,8 +1,8 @@
 package racingcar;
 
-import racingcar.strategy.MoveCondition;
+import racingcar.strategy.MoveStrategy;
 import racingcar.game.RacingCarGame;
-import racingcar.strategy.RandomMoveCondition;
+import racingcar.strategy.RandomMoveStrategy;
 import racingcar.io.ConsoleInputHandler;
 import racingcar.io.ConsoleOutputHandler;
 import racingcar.io.InputHandler;
@@ -14,12 +14,12 @@ public class Application {
 
         InputHandler inputHandler = new ConsoleInputHandler();
         OutputHandler outputHandler = new ConsoleOutputHandler();
-        MoveCondition moveCondition = new RandomMoveCondition();
+        MoveStrategy moveStrategy = new RandomMoveStrategy();
 
         RacingCarGame racingCarGame = new RacingCarGame(
                 inputHandler,
                 outputHandler,
-                moveCondition
+                moveStrategy
         );
         racingCarGame.run();
     }

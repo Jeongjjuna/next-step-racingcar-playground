@@ -2,7 +2,7 @@ package racingcar.strategy;
 
 import java.util.Random;
 
-public class RandomMoveCondition implements MoveCondition {
+public class RandomMoveStrategy implements MoveStrategy {
 
     private final Random random = new Random();
 

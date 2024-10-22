@@ -1,5 +1,5 @@
 package racingcar.strategy;
 
-public interface MoveCondition {
+public interface MoveStrategy {
     boolean canGo();
 }

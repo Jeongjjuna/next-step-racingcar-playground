@@ -4,18 +4,18 @@ package racingcar.game;
 import racingcar.game.car.Cars;
 import racingcar.io.InputHandler;
 import racingcar.io.OutputHandler;
-import racingcar.strategy.MoveCondition;
+import racingcar.strategy.MoveStrategy;
 
 public class RacingCarGame implements GameInitializable, GameRunnable {
 
     private final InputHandler inputHandler;
     private final OutputHandler outputHandler;
-    private final MoveCondition moveCondition;
+    private final MoveStrategy moveStrategy;
 
-    public RacingCarGame(InputHandler inputHandler, OutputHandler outputHandler, MoveCondition moveCondition) {
+    public RacingCarGame(InputHandler inputHandler, OutputHandler outputHandler, MoveStrategy moveStrategy) {
         this.inputHandler = inputHandler;
         this.outputHandler = outputHandler;
-        this.moveCondition = moveCondition;
+        this.moveStrategy = moveStrategy;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class RacingCarGame implements GameInitializable, GameRunnable {
     }
 
     private void race(Cars players) {
-        players.moveBy(moveCondition);
+        players.moveBy(moveStrategy);
     }
 
 }

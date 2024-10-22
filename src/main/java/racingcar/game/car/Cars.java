@@ -1,7 +1,7 @@
 package racingcar.game.car;
 
 import racingcar.exception.BaseException;
-import racingcar.strategy.MoveCondition;
+import racingcar.strategy.MoveStrategy;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ public class Cars {
         this.cars = cars;
     }
 
-    public void moveBy(MoveCondition moveCondition) {
+    public void moveBy(MoveStrategy moveStrategy) {
         cars.stream()
-                .filter(car -> moveCondition.canGo())
+                .filter(car -> moveStrategy.canGo())
                 .forEach(Car::moveForward);
     }
 

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import racingcar.game.car.Car;
 import racingcar.game.car.CarPosition;
 import racingcar.game.car.Cars;
-import racingcar.strategy.MoveCondition;
+import racingcar.strategy.MoveStrategy;
 
 import java.util.List;
 
@@ -65,7 +65,7 @@ class CarsTest {
         Cars cars = new Cars(carList);
 
         // when
-        cars.moveBy(new MoveCondition() {
+        cars.moveBy(new MoveStrategy() {
             @Override
             public boolean canGo() {
                 return true;
@@ -92,7 +92,7 @@ class CarsTest {
         Cars cars = new Cars(carList);
 
         // when
-        cars.moveBy(new MoveCondition() {
+        cars.moveBy(new MoveStrategy() {
             @Override
             public boolean canGo() {
                 return false;
