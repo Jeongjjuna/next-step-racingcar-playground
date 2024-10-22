@@ -21,7 +21,7 @@ public class ConsoleOutputHandler implements OutputHandler {
     @Override
     public void showRacingGameResult(Cars players) {
         List<Car> cars = players.getCars();
-        for (Car car: cars) {
+        for (Car car : cars) {
             System.out.println(car.getName() + " : " + "-".repeat(car.getPosition().getPosition()));
         }
         System.out.println();

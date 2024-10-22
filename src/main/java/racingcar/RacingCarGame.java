@@ -2,10 +2,10 @@ package racingcar;
 
 
 import racingcar.domain.Count;
+import racingcar.domain.car.Cars;
 import racingcar.exception.BaseException;
 import racingcar.game.GameInitializable;
 import racingcar.game.GameRunnable;
-import racingcar.domain.car.Cars;
 import racingcar.infrastructure.RacingCarIOHandler;
 import racingcar.strategy.MoveStrategy;
 
