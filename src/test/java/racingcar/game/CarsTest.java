@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import racingcar.game.car.Car;
 import racingcar.game.car.CarPosition;
 import racingcar.game.car.Cars;
+import racingcar.strategy.MoveCondition;
 
 import java.util.List;
 

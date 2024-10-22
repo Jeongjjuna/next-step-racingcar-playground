@@ -1,7 +1,7 @@
 package racingcar.game.car;
 
 import racingcar.exception.BaseException;
-import racingcar.game.MoveCondition;
+import racingcar.strategy.MoveCondition;
 
 import java.util.List;
 

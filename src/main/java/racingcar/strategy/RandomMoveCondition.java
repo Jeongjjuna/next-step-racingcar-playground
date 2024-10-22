@@ -1,7 +1,5 @@
 package racingcar.strategy;
 
-import racingcar.game.MoveCondition;
-
 import java.util.Random;
 
 public class RandomMoveCondition implements MoveCondition {

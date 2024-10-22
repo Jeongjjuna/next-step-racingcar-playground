@@ -1,12 +1,10 @@
-package racingcar.strategy;
+package racingcar.game;
 
 
-import racingcar.game.GameInitializable;
-import racingcar.game.GameRunnable;
-import racingcar.game.MoveCondition;
 import racingcar.game.car.Cars;
 import racingcar.io.InputHandler;
 import racingcar.io.OutputHandler;
+import racingcar.strategy.MoveCondition;
 
 public class RacingCarGame implements GameInitializable, GameRunnable {
 
