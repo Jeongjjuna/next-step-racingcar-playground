@@ -2,9 +2,9 @@ package racingcar.game;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import racingcar.game.car.Car;
-import racingcar.game.car.CarPosition;
-import racingcar.game.car.Cars;
+import racingcar.domain.car.Car;
+import racingcar.domain.car.CarPosition;
+import racingcar.domain.car.Cars;
 import racingcar.strategy.MoveStrategy;
 
 import java.util.List;

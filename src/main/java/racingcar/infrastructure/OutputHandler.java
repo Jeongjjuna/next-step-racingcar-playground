@@ -1,6 +1,6 @@
-package racingcar.io;
+package racingcar.infrastructure;
 
-import racingcar.game.car.Cars;
+import racingcar.domain.car.Cars;
 
 public interface OutputHandler {
     void showCarNamesInputComment();

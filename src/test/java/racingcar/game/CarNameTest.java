@@ -3,7 +3,7 @@ package racingcar.game;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.exception.BaseException;
-import racingcar.game.car.CarName;
+import racingcar.domain.car.CarName;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.junit.jupiter.api.Assertions.assertThrows;

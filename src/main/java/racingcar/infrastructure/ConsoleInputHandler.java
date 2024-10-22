@@ -1,8 +1,8 @@
-package racingcar.io;
+package racingcar.infrastructure;
 
-import racingcar.game.Count;
-import racingcar.game.car.Car;
-import racingcar.game.car.Cars;
+import racingcar.domain.Count;
+import racingcar.domain.car.Car;
+import racingcar.domain.car.Cars;
 
 import java.util.Arrays;
 import java.util.List;

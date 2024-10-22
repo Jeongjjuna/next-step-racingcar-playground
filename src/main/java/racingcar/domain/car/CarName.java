@@ -1,4 +1,4 @@
-package racingcar.game.car;
+package racingcar.domain.car;
 
 import racingcar.exception.BaseException;
 

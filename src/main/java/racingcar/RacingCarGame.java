@@ -1,8 +1,11 @@
-package racingcar.game;
+package racingcar;
 
 
-import racingcar.game.car.Cars;
-import racingcar.io.RacingCarIOHandler;
+import racingcar.domain.Count;
+import racingcar.game.GameInitializable;
+import racingcar.game.GameRunnable;
+import racingcar.domain.car.Cars;
+import racingcar.infrastructure.RacingCarIOHandler;
 import racingcar.strategy.MoveStrategy;
 
 public class RacingCarGame implements GameInitializable, GameRunnable {

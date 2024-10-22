@@ -1,6 +1,5 @@
 package racingcar;
 
-import racingcar.game.RacingCarGame;
 import racingcar.strategy.MoveStrategy;
 import racingcar.strategy.RandomMoveStrategy;
 
