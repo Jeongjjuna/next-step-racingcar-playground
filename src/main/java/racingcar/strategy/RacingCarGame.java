@@ -1,6 +1,10 @@
-package racingcar.game;
+package racingcar.strategy;
 
 
+import racingcar.game.GameInitializable;
+import racingcar.game.GameRunnable;
+import racingcar.game.MoveCondition;
+import racingcar.game.car.Cars;
 import racingcar.io.InputHandler;
 import racingcar.io.OutputHandler;
 

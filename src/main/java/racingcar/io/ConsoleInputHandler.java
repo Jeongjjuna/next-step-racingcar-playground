@@ -1,7 +1,7 @@
 package racingcar.io;
 
-import racingcar.game.Car;
-import racingcar.game.Cars;
+import racingcar.game.car.Car;
+import racingcar.game.car.Cars;
 
 import java.util.Arrays;
 import java.util.List;

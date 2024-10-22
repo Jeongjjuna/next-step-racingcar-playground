@@ -1,8 +1,8 @@
 package racingcar;
 
 import racingcar.game.MoveCondition;
-import racingcar.game.RacingCarGame;
-import racingcar.game.RandomMoveCondition;
+import racingcar.strategy.RacingCarGame;
+import racingcar.strategy.RandomMoveCondition;
 import racingcar.io.ConsoleInputHandler;
 import racingcar.io.ConsoleOutputHandler;
 import racingcar.io.InputHandler;

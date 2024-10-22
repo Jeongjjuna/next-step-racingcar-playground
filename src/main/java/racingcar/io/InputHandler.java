@@ -1,6 +1,6 @@
 package racingcar.io;
 
-import racingcar.game.Cars;
+import racingcar.game.car.Cars;
 
 public interface InputHandler {
     Cars getPlayerCars();
