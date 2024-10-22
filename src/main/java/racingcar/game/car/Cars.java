@@ -19,19 +19,22 @@ public class Cars {
     }
 
     public Cars findWinner() {
-        CarPosition maxPosition = cars.stream()
-                .map(Car::getPosition)
-                .max(CarPosition::compareTo)
-                .orElseThrow(() -> new BaseException("[ERROR] 승리자를 찾을 수 없음."));
+        CarPosition maxPosition = findMaxPosition();
 
         List<Car> winners = cars.stream()
                 .filter(car -> car.isIn(maxPosition))
                 .toList();
-
         return new Cars(winners);
     }
 
     public List<Car> getCars() {
         return cars;
+    }
+
+    private CarPosition findMaxPosition() {
+        return cars.stream()
+                .map(Car::getPosition)
+                .max(CarPosition::compareTo)
+                .orElseThrow(() -> new BaseException("[ERROR] 승리자를 찾을 수 없음."));
     }
 }
