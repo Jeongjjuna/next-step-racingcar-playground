@@ -8,10 +8,12 @@ public class RacingCarGame implements GameInitializable, GameRunnable {
 
     private final InputHandler inputHandler;
     private final OutputHandler outputHandler;
+    private final MoveCondition moveCondition;
 
-    public RacingCarGame(InputHandler inputHandler, OutputHandler outputHandler) {
+    public RacingCarGame(InputHandler inputHandler, OutputHandler outputHandler, MoveCondition moveCondition) {
         this.inputHandler = inputHandler;
         this.outputHandler = outputHandler;
+        this.moveCondition = moveCondition;
     }
 
     @Override
@@ -29,7 +31,7 @@ public class RacingCarGame implements GameInitializable, GameRunnable {
 
         outputHandler.showGameResultComment();
         while (trialCount != 0) {
-            race(playerCars, trialCount);
+            race(playerCars);
             outputHandler.showRacingGameResult(playerCars); // 실행 결과
             trialCount -= 1;
         }
@@ -38,8 +40,8 @@ public class RacingCarGame implements GameInitializable, GameRunnable {
         outputHandler.showWinner(winners);
     }
 
-    private void race(Cars players, int trialCount) {
-        players.move(trialCount);
+    private void race(Cars players) {
+        players.moveBy(moveCondition);
     }
 
 }

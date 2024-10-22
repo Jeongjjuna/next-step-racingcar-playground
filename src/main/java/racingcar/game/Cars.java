@@ -3,7 +3,6 @@ package racingcar.game;
 import racingcar.exception.BaseException;
 
 import java.util.List;
-import java.util.Random;
 
 public class Cars {
     private final List<Car> cars;
@@ -12,21 +11,10 @@ public class Cars {
         this.cars = cars;
     }
 
-    /**
-     * 랜덤값을 어떻게 받을지 고민해야함
-     * - 테스트하기 어려움
-     * - 조건 변경하기 어려움
-     */
-    public void move(int trialCount) {
-        Random random = new Random();
-
-        for (Car car: cars) {
-            int randomNumber = random.nextInt(0, 10);
-
-            if (4 <= randomNumber) {
-                car.moveForward();
-            }
-        }
+    public void moveBy(MoveCondition moveCondition) {
+        cars.stream()
+                .filter(car -> moveCondition.canGo())
+                .forEach(Car::moveForward);
     }
 
     public Cars findWinner() {

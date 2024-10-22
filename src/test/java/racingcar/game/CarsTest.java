@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 @DisplayName("[Cars] 단위테스트")
 class CarsTest {
@@ -46,5 +47,59 @@ class CarsTest {
 
         // then
         assertThat(findCars.size()).isEqualTo(3);
+    }
+
+    @DisplayName("자동차가 조건에 따라 전진할 수 있다.")
+    @Test
+    void 자동차가_조건에따라_전진한다() {
+        // given
+        List<Car> carList = List.of(
+                new Car("name1", 0),
+                new Car("name2", 0),
+                new Car("name2", 0)
+        );
+        Cars cars = new Cars(carList);
+
+        // when
+        cars.moveBy(new MoveCondition() {
+            @Override
+            public boolean canGo() {
+                return true;
+            }
+        });
+
+        // then
+        assertAll(
+                () -> assertThat(cars.getCars().get(0).getPosition()).isEqualTo(new CarPosition(1)),
+                () -> assertThat(cars.getCars().get(1).getPosition()).isEqualTo(new CarPosition(1)),
+                () -> assertThat(cars.getCars().get(2).getPosition()).isEqualTo(new CarPosition(1))
+        );
+    }
+
+    @DisplayName("자동차가 조건에 따라 전진하지 않는다.")
+    @Test
+    void 자동차가_조건에따라_전진하지_않는다() {
+        // given
+        List<Car> carList = List.of(
+                new Car("name1", 0),
+                new Car("name2", 0),
+                new Car("name2", 0)
+        );
+        Cars cars = new Cars(carList);
+
+        // when
+        cars.moveBy(new MoveCondition() {
+            @Override
+            public boolean canGo() {
+                return false;
+            }
+        });
+
+        // then
+        assertAll(
+                () -> assertThat(cars.getCars().get(0).getPosition()).isEqualTo(new CarPosition(0)),
+                () -> assertThat(cars.getCars().get(1).getPosition()).isEqualTo(new CarPosition(0)),
+                () -> assertThat(cars.getCars().get(2).getPosition()).isEqualTo(new CarPosition(0))
+        );
     }
 }
