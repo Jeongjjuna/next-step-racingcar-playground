@@ -2,7 +2,7 @@ package racingcar.game;
 
 import java.util.Objects;
 
-public class CarPosition {
+public class CarPosition implements Comparable<CarPosition> {
 
     private final int position;
 
@@ -12,6 +12,10 @@ public class CarPosition {
 
     public CarPosition moveForward() {
         return new CarPosition(position + 1);
+    }
+
+    public int getPosition() {
+        return position;
     }
 
     @Override
@@ -27,4 +31,13 @@ public class CarPosition {
         return Objects.hashCode(position);
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(position);
+    }
+
+    @Override
+    public int compareTo(CarPosition other) {
+        return Integer.compare(this.position, other.position);
+    }
 }

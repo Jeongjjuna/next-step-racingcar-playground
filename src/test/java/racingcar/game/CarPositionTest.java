@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@DisplayName("[CarPosition] 테스트")
+@DisplayName("[CarPosition] 단위테스트")
 class CarPositionTest {
 
     @DisplayName("포지션이 1 증가한다.")

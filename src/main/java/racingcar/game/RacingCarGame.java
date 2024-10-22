@@ -22,15 +22,19 @@ public class RacingCarGame implements GameInitializable, GameRunnable {
     @Override
     public void run() {
         outputHandler.showCarNamesInputComment(); // 경주할 자동차 이름을 입력하세요(이름은 쉼표(,)를 기준으로 구분).
-        Cars players = inputHandler.getPlayCars();
+        Cars playerCars = inputHandler.getPlayerCars();
 
-        int trialCount = outputHandler.showTrialCountInputComment(); // 시도할 회수는 몇회인가요?
+        outputHandler.showTrialCountInputComment(); // 시도할 회수는 몇회인가요?
+        int trialCount = inputHandler.getTrialCount();
 
-        race(players, trialCount);
+        outputHandler.showGameResultComment();
+        while (trialCount != 0) {
+            race(playerCars, trialCount);
+            outputHandler.showRacingGameResult(playerCars); // 실행 결과
+            trialCount -= 1;
+        }
 
-        outputHandler.showRacingGameResult(players); // 실행 결과
-
-        Cars winners = players.findWinner();
+        Cars winners = playerCars.findWinner();
         outputHandler.showWinner(winners);
     }
 

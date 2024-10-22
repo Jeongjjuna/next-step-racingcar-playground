@@ -5,9 +5,11 @@ import racingcar.game.Cars;
 public interface OutputHandler {
     void showCarNamesInputComment();
 
-    int showTrialCountInputComment();
+    void showTrialCountInputComment();
 
     void showRacingGameResult(Cars players);
 
     void showWinner(Cars winners);
+
+    void showGameResultComment();
 }

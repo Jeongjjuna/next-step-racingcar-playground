@@ -1,6 +1,10 @@
 package racingcar.io;
 
+import racingcar.game.Car;
+import racingcar.game.CarName;
 import racingcar.game.Cars;
+
+import java.util.List;
 
 public class ConsoleOutputHandler implements OutputHandler {
 
@@ -10,17 +14,31 @@ public class ConsoleOutputHandler implements OutputHandler {
     }
 
     @Override
-    public int showTrialCountInputComment() {
-        return 0;
+    public void showTrialCountInputComment() {
+        System.out.println("시도할 회수는 몇회인가요?");
     }
 
     @Override
     public void showRacingGameResult(Cars players) {
-
+        List<Car> cars = players.getCars();
+        for (Car car: cars) {
+            System.out.println(car.getName() + " : " + "-".repeat(car.getPosition().getPosition()));
+        }
+        System.out.println();
     }
 
     @Override
     public void showWinner(Cars winners) {
+        List<String> winnerNames = winners.getCars().stream()
+                .map(Car::getName)
+                .map(CarName::getName)
+                .toList();
 
+        System.out.println(String.join(", ", winnerNames) + "가 최종 우승했습니다.");
+    }
+
+    @Override
+    public void showGameResultComment() {
+        System.out.println("실행 결과");
     }
 }

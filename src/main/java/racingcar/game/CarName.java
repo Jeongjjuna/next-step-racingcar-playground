@@ -35,6 +35,11 @@ public class CarName {
         return Objects.hashCode(name);
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     private void validateSize(String name) {
         if (MAX_NAME_SIZE < name.length()) {
             throw new BaseException(String.format("[ERROR] 자동차 이름은 최대 %d자까지 가능합니다.", MAX_NAME_SIZE));
