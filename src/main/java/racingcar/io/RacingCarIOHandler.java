@@ -1,5 +1,6 @@
 package racingcar.io;
 
+import racingcar.game.Count;
 import racingcar.game.car.Cars;
 
 public class RacingCarIOHandler {
@@ -11,7 +12,7 @@ public class RacingCarIOHandler {
         return inputHandler.getPlayerCars();
     }
 
-    public int askRacingTrialCountSelecting() {
+    public Count askRacingTrialCountSelecting() {
         outputHandler.showTrialCountInputComment();
         return inputHandler.getTrialCount();
     }

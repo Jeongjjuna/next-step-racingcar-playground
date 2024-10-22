@@ -23,20 +23,25 @@ public class RacingCarGame implements GameInitializable, GameRunnable {
     public void run() {
         Cars playerCars = racingCarIOHandler.askRacingCarNameSelecting();
 
-        int trialCount = racingCarIOHandler.askRacingTrialCountSelecting();
+        Count count = racingCarIOHandler.askRacingTrialCountSelecting();
 
         racingCarIOHandler.showGameResultComment();
 
-        while (trialCount != 0) {
-            race(playerCars);
-
-            racingCarIOHandler.showRacingGameResult(playerCars);
-
-            trialCount -= 1;
+        while (count.isRemain()) {
+            count = raceAllPlayerAndCountDown(playerCars, count);
         }
 
         Cars winners = playerCars.findWinner();
+
         racingCarIOHandler.showWinner(winners);
+    }
+
+    private Count raceAllPlayerAndCountDown(Cars playerCars, Count count) {
+        race(playerCars);
+
+        racingCarIOHandler.showRacingGameResult(playerCars);
+
+        return count.down();
     }
 
     private void race(Cars players) {

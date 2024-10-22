@@ -1,5 +1,6 @@
 package racingcar.io;
 
+import racingcar.game.Count;
 import racingcar.game.car.Car;
 import racingcar.game.car.Cars;
 
@@ -13,7 +14,6 @@ public class ConsoleInputHandler implements InputHandler {
 
     @Override
     public Cars getPlayerCars() {
-        // pobi,crong,honux
         String input = scanner.nextLine();
         String[] names = input.split(",");
 
@@ -25,8 +25,8 @@ public class ConsoleInputHandler implements InputHandler {
     }
 
     @Override
-    public int getTrialCount() {
+    public Count getTrialCount() {
         String input = scanner.nextLine();
-        return Integer.parseInt(input);
+        return new Count(Integer.parseInt(input));
     }
 }
