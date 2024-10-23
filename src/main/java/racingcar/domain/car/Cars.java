@@ -3,13 +3,29 @@ package racingcar.domain.car;
 import racingcar.exception.BaseException;
 import racingcar.strategy.MoveStrategy;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Cars {
     private final List<Car> cars;
 
-    public Cars(List<Car> cars) {
+    private Cars(List<Car> cars) {
         this.cars = cars;
+    }
+
+    public static Cars of(List<Car> cars) {
+        return new Cars(cars);
+    }
+
+    public static Cars of(String[] names) {
+        List<Car> cars = convertCarsFrom(names);
+        return new Cars(cars);
+    }
+
+    private static List<Car> convertCarsFrom(String[] names) {
+        return Arrays.stream(names)
+                .map(Car::new)
+                .toList();
     }
 
     public void moveBy(MoveStrategy moveStrategy) {
@@ -24,7 +40,7 @@ public class Cars {
         List<Car> winners = cars.stream()
                 .filter(car -> car.isIn(maxPosition))
                 .toList();
-        return new Cars(winners);
+        return Cars.of(winners);
     }
 
     public List<Car> getCars() {

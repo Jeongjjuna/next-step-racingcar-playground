@@ -25,7 +25,7 @@ class CarsTest {
                 new Car("name2", 5),
                 new Car("name2", 5)
         );
-        Cars cars = new Cars(carList);
+        Cars cars = Cars.of(carList);
 
         // when
         Cars winners = cars.findWinner();
@@ -44,7 +44,7 @@ class CarsTest {
                 new Car("name2", 5),
                 new Car("name2", 5)
         );
-        Cars cars = new Cars(carList);
+        Cars cars = Cars.of(carList);
 
         // when
         List<Car> findCars = cars.getCars();
@@ -62,7 +62,7 @@ class CarsTest {
                 new Car("name2", 0),
                 new Car("name2", 0)
         );
-        Cars cars = new Cars(carList);
+        Cars cars = Cars.of(carList);
 
         // when
         cars.moveBy(new MoveStrategy() {
@@ -89,7 +89,7 @@ class CarsTest {
                 new Car("name2", 0),
                 new Car("name2", 0)
         );
-        Cars cars = new Cars(carList);
+        Cars cars = Cars.of(carList);
 
         // when
         cars.moveBy(new MoveStrategy() {

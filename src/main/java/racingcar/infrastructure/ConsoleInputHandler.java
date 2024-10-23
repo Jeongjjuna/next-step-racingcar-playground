@@ -1,11 +1,8 @@
 package racingcar.infrastructure;
 
 import racingcar.domain.Count;
-import racingcar.domain.car.Car;
 import racingcar.domain.car.Cars;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleInputHandler implements InputHandler {
@@ -17,11 +14,7 @@ public class ConsoleInputHandler implements InputHandler {
         String input = scanner.nextLine();
         String[] names = input.split(",");
 
-        List<Car> cars = Arrays.stream(names)
-                .map(Car::new)
-                .toList();
-
-        return new Cars(cars);
+        return Cars.of(names);
     }
 
     @Override
